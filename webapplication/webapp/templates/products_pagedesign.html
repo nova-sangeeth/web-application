@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{%block content%}
+<head>
+    <meta charset="UTF-8">
+    <title>products_page</title>
+    <h1>Products Page</h1>
+
+</head>
+<body>
+<div class="row"></div>
+{%for product in Items %}
+<div class="col">
+    <div class="card" style="width: 18rem;">
+        <img alt="..." class="card-img-top" src="{{ product.image_url}}">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">${{product.price}}</p>
+            <a class="btn btn-primary" href="#">add to cart</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</body>
+{%endblock%}
+</html>
